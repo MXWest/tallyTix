@@ -106,7 +106,7 @@ function countSeats(r, p, h) {
                     ticketPrice = priceLevels[p[i][j]]
                     soldDollars += ticketPrice
                     if (debug) {
-                        console.log(sold + "\t" + ticketPrice + "\t" + p[i][j] + "\t" + soldDollars)
+                        console.log("S\t" + sold + "\t" + ticketPrice + "\t" + p[i][j] + "\t" + soldDollars)
                     }
                     break;
                 case 'O':
@@ -114,11 +114,14 @@ function countSeats(r, p, h) {
                     ticketPrice = priceLevels[p[i][j]]
                     availableDollars += ticketPrice
                     if (debug) {
-                        console.log(available + "\t" + ticketPrice + "\t" + p[i][j] + "\t" + availableDollars)
+                        console.log("A\t" + available + "\t" + ticketPrice + "\t" + p[i][j] + "\t" + availableDollars)
                     }
                     break;
                 case blankStatus:
                     unavailable++;
+                    if (debug) {
+                        console.log("U\t" + unavailable + "\t" + ticketPrice + "\trow:" + i + "\tseat:" + j + "\t" + availableDollars)
+                    }
                     break;
                 case 'K':
                     k++;
@@ -128,7 +131,7 @@ function countSeats(r, p, h) {
                     break;
                 default:
                     if (debug) {
-                        console.log("Unknown Status: " + seatStatus)
+                        console.log(seatStatus + "\trow:" + i + "\tseat:" + j)
                     }
                     unknown++;
                     break;
