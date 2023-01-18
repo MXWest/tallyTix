@@ -5,7 +5,6 @@ import {rightRowSeatRealStatus} from "./rowRealSeatStatus.js";
 
 const debug = argv.length > 2;
 
-const blankStatus = 'U';
 /* Rest of the file needn't be changed */
 const priceLevels = {
     '21': 40,
@@ -94,6 +93,7 @@ function countSeats(r, p, h) {
     let available = 0;
     let availableDollars = 0.00;
     let unavailable = 0;
+    let tempHold = 0;
     let k = 0;
     let unknown = 0;
     let seatStatus;
@@ -117,10 +117,16 @@ function countSeats(r, p, h) {
                         console.log("A\t" + available + "\t" + ticketPrice + "\t" + p[i][j] + "\t" + availableDollars)
                     }
                     break;
-                case blankStatus:
+                case 'T':
+                    tempHold++
+                    if (debug) {
+                        console.log(seatStatus + "\t" + tempHold + "\t" + ticketPrice + "\trow:" + i + "\tseat:" + j + "\t" + availableDollars)
+                    }
+                    break;
+                case 'U':
                     unavailable++;
                     if (debug) {
-                        console.log("U\t" + unavailable + "\t" + ticketPrice + "\trow:" + i + "\tseat:" + j + "\t" + availableDollars)
+                        console.log(seatStatus + "\t" + unavailable + "\t" + ticketPrice + "\trow:" + i + "\tseat:" + j + "\t" + availableDollars)
                     }
                     break;
                 case 'K':
@@ -141,11 +147,11 @@ function countSeats(r, p, h) {
     console.log("\n---------- " + h + " -----------")
     console.log("# Tickets:               " + sold)
     console.log("Dollar Amount:           $" + soldDollars)
-    console.log("avail/ unavailable/ 'K': " + available + "/" + unavailable + "/" + k)
+    console.log("avail/ unav /'K' /'T': " + available + "/" + unavailable + "/" + k + "/" + tempHold)
     if (unknown) {
         console.log("unknown: " + unknown)
     }
-    return [sold, soldDollars, available, availableDollars]
+    return [sold, soldDollars, available, availableDollars, tempHold]
 }
 
 let leftTotals = countSeats(leftRowSeatRealStatus, leftRowPriceLevelID, "<< Left >>");
@@ -155,10 +161,11 @@ let totalTickets = leftTotals[0] + centerTotals[0] + rightTotals[0];
 let totalDollars = leftTotals[1] + centerTotals[1] + rightTotals[1];
 let totalAvailableTickets = leftTotals[2] + centerTotals[2] + rightTotals[2]
 let totalAvailableDollars = leftTotals[3] + centerTotals[3] + rightTotals[3]
+let totalTempHold = leftTotals[4] + centerTotals[4] + rightTotals[4]
 console.log("\n--------- << TOTALS >> ----------")
 console.log("# Tickets Sold:          " + totalTickets)
 console.log("Dollar Amount:           $" + totalDollars.toFixed(2))
 console.log("Split (50%):             $" + (totalDollars * .5).toFixed(2))
 console.log("\n# Tickets Available:     " + totalAvailableTickets)
 console.log("Dollar Value:            $" + totalAvailableDollars)
-console.log("Venue Capacity:          " + (totalTickets+totalAvailableTickets))
+console.log("Venue Capacity:          " + (totalTickets+totalAvailableTickets+totalTempHold))
