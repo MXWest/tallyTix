@@ -11,6 +11,8 @@ Developed with [`WebStorm`](https://www.jetbrains.com/webstorm/)
 ## Getting values
 Read the comments in [`rowRealSeatStatus.js`](../rowRealSeatStatus.js)
 
+### How To Scrape Values
+
 ## Running
 
 ```bash
