@@ -1,3 +1,6 @@
 {
-    "type": "module"
+    "type": "module",
+    "devDependencies": {
+        "js-beautify": "^1.14.9"
+    }
 }
