@@ -1,7 +1,15 @@
-import {argv} from 'node:process';
-import {leftRowSeatRealStatus} from "./rowRealSeatStatus.js";
-import {centerRowSeatRealStatus} from "./rowRealSeatStatus.js";
-import {rightRowSeatRealStatus} from "./rowRealSeatStatus.js";
+import {
+    argv
+} from 'node:process';
+import {
+    leftRowSeatRealStatus
+} from "./rowRealSeatStatus.js";
+import {
+    centerRowSeatRealStatus
+} from "./rowRealSeatStatus.js";
+import {
+    rightRowSeatRealStatus
+} from "./rowRealSeatStatus.js";
 
 const debug = argv.length > 2;
 
@@ -169,4 +177,4 @@ console.log("Split (50%):             $" + (totalDollars * .5).toFixed(2))
 console.log("Split (60%):             $" + (totalDollars * .6).toFixed(2))
 console.log("\n# Tickets Available:     " + totalAvailableTickets)
 console.log("Dollar Value:            $" + totalAvailableDollars)
-console.log("Venue Capacity:          " + (totalTickets+totalAvailableTickets+totalTempHold))
+console.log("Venue Capacity:          " + (totalTickets + totalAvailableTickets + totalTempHold))
