@@ -25,7 +25,6 @@ export const leftRowSeatRealStatus = [
     ['K', 'K', 'K', 'K', 'K', 'K', 'K', 'K', 'K']
 ];
 
-
 export const centerRowSeatRealStatus = [
     ['', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
     ['X', 'X', 'X', 'X', 'O', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
@@ -34,7 +33,7 @@ export const centerRowSeatRealStatus = [
     ['', 'X', 'X', 'X', 'O', 'O', 'X', 'X', 'X', 'X', 'O', 'O', 'O', 'X'],
     ['X', 'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'X', 'X', 'X', 'X', 'X'],
     ['', 'X', 'X', 'X', 'X', 'X', 'X', 'O', 'O', 'O', 'O', 'O', 'X', 'X'],
-    ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
+    ['X', 'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'X', 'X', 'O', 'X', 'X'],
     ['X', 'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'X', 'X'],
     ['', 'X', 'X', 'X', 'X', 'X', 'X', 'O', 'O', 'O', 'O', 'O', 'X', 'X'],
@@ -49,7 +48,6 @@ export const centerRowSeatRealStatus = [
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
 ];
-
 
 export const rightRowSeatRealStatus = [
     ['X', 'X', 'K', '', '', '', '', '', ''],
@@ -71,7 +69,7 @@ export const rightRowSeatRealStatus = [
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'O', 'O'],
-    ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
+    ['X', 'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['X', 'O', 'X', 'X', 'O', 'O', 'X', 'X', '']
 ];
