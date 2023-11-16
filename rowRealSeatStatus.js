@@ -71,5 +71,5 @@ export const rightRowSeatRealStatus = [
     ['X', 'X', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
-    ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', '']
+    ['O', 'O', 'O', 'O', 'O', 'O', 'X', 'X', '']
 ];
